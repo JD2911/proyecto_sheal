@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SHEAL Travel Agency — viajes premium, destinos seleccionados y experiencias inolvidables.">
+  <title>SHEAL Travel Agency</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500;1,600&family=Great+Vibes&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="site-header" id="inicio">
+    <div class="container header-inner">
+      <a class="brand" href="#inicio" aria-label="SHEAL Travel Agency">
+        <span class="brand-mark">S</span>
+        <span class="brand-name">SHEAL</span>
+        <span class="brand-subtitle">TRAVEL AGENCY</span>
+      </a>
+
+      <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="main-nav" aria-label="Navegación principal">
+        <a href="#inicio">INICIO</a>
+        <a href="#destinos">DESTINOS</a>
+        <a href="#paquetes">PAQUETES</a>
+        <a href="#nosotros">SOBRE NOSOTROS</a>
+        <a class="nav-cta" href="https://wa.me/549112345678?text=Hola%20SHEAL%20Travel%20Agency%2C%20quiero%20cotizar%20un%20viaje." target="_blank" rel="noopener">
+          <span>◉</span> COTIZÁ TU VIAJE
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-slides">
+        <div class="hero-slide active" style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2200&q=85')"></div>
+        <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=2200&q=85')"></div>
+        <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=2200&q=85')"></div>
+      </div>
+
+      <div class="hero-overlay"></div>
+
+      <div class="container hero-content">
+        <p class="eyebrow">VIAJÁ. RELAJATE. DESCUBRÍ.</p>
+        <h1>Tu próximo destino</h1>
+        <div class="script-title">te está esperando.</div>
+        <p class="hero-copy">Viví experiencias únicas en los mejores<br class="desktop-only"> destinos del mundo con SHEAL Travel Agency.</p>
+        <a class="gold-btn" href="https://wa.me/549112345678?text=Hola%20SHEAL%20Travel%20Agency%2C%20quiero%20hablar%20sobre%20un%20viaje." target="_blank" rel="noopener">
+          <span>◉</span> HABLÁ CON NOSOTROS
+        </a>
+      </div>
+
+      <div class="slider-dots" aria-label="Control del slider">
+        <button class="dot active" data-slide="0" aria-label="Slide 1"></button>
+        <button class="dot" data-slide="1" aria-label="Slide 2"></button>
+        <button class="dot" data-slide="2" aria-label="Slide 3"></button>
+      </div>
+    </section>
+
+    <!-- DESTINOS -->
+    <section class="section destinations-section" id="destinos">
+      <div class="container split-layout">
+        <div class="section-intro">
+          <p class="eyebrow dark">DESTINOS</p>
+          <h2>Elegí tu próxima aventura</h2>
+          <p>Playas paradisíacas, ciudades inolvidables, naturaleza imponente. ¿A dónde querés ir?</p>
+          <a class="outline-btn" href="#destinos-grid">◉ VER TODOS LOS DESTINOS</a>
+        </div>
+
+        <div class="cards-wrap" id="destinos-grid">
+          <article class="travel-card">
+            <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=85" alt="Playa tropical del Caribe">
+            <div class="card-gradient"></div>
+            <div class="card-icon">✦</div>
+            <div class="card-content">
+              <h3>CARIBE</h3>
+              <p>Playas paradisíacas</p>
+            </div>
+          </article>
+
+          <article class="travel-card">
+            <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?auto=format&fit=crop&w=900&q=85" alt="Coliseo de Roma">
+            <div class="card-gradient"></div>
+            <div class="card-icon">⌂</div>
+            <div class="card-content">
+              <h3>EUROPA</h3>
+              <p>Cultura e historia</p>
+            </div>
+          </article>
+
+          <article class="travel-card">
+            <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=900&q=85" alt="Lago y montañas de Argentina">
+            <div class="card-gradient"></div>
+            <div class="card-icon">△</div>
+            <div class="card-content">
+              <h3>ARGENTINA</h3>
+              <p>Naturaleza única</p>
+            </div>
+          </article>
+
+          <button class="carousel-arrow destinations-next" aria-label="Siguiente destino">→</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAQUETES -->
+    <section class="section packages-section" id="paquetes">
+      <div class="container split-layout">
+        <div class="section-intro light">
+          <p class="eyebrow">PAQUETES DESTACADOS</p>
+          <h2>Viajes pensados para vos</h2>
+          <p>Armamos experiencias a medida para que solo te preocupes por disfrutar.</p>
+          <a class="gold-btn" href="#paquetes-grid">◉ VER TODOS LOS PAQUETES</a>
+        </div>
+
+        <div class="cards-wrap" id="paquetes-grid">
+          <article class="travel-card">
+            <img src="https://images.unsplash.com/photo-1540202404-a2f29016b523?auto=format&fit=crop&w=900&q=85" alt="Resort tropical sobre el agua">
+            <div class="card-gradient"></div>
+            <div class="card-icon">▣</div>
+            <div class="card-content">
+              <h3>PLAYAS</h3>
+              <p>y descanso</p>
+            </div>
+          </article>
+
+          <article class="travel-card">
+            <img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=900&q=85" alt="Santorini Grecia">
+            <div class="card-gradient"></div>
+            <div class="card-icon">◉</div>
+            <div class="card-content">
+              <h3>CULTURA</h3>
+              <p>e historia</p>
+            </div>
+          </article>
+
+          <article class="travel-card">
+            <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=85" alt="Aventura en las montañas">
+            <div class="card-gradient"></div>
+            <div class="card-icon">△</div>
+            <div class="card-content">
+              <h3>AVENTURA</h3>
+              <p>y naturaleza</p>
+            </div>
+          </article>
+
+          <div class="carousel-controls">
+            <button aria-label="Anterior">←</button>
+            <button class="active" aria-label="Siguiente">→</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOBRE NOSOTROS / BENEFICIOS -->
+    <section class="section why-section" id="nosotros">
+      <div class="container">
+        <div class="center-heading">
+          <p class="eyebrow dark">¿POR QUÉ VIAJAR CON</p>
+          <h2>SHEAL TRAVEL AGENCY?</h2>
+        </div>
+
+        <div class="benefits">
+          <article class="benefit">
+            <div class="benefit-icon">♙</div>
+            <h3>ATENCIÓN<br>PERSONALIZADA</h3>
+            <p>Te acompañamos en cada paso para que vivas la mejor experiencia.</p>
+          </article>
+
+          <article class="benefit">
+            <div class="benefit-icon">⌖</div>
+            <h3>DESTINOS<br>SELECCIONADOS</h3>
+            <p>Elegimos los mejores lugares para que disfrutes al máximo.</p>
+          </article>
+
+          <article class="benefit">
+            <div class="benefit-icon">◎</div>
+            <h3>EXPERIENCIAS<br>ÚNICAS</h3>
+            <p>Viajes diseñados para crear recuerdos inolvidables.</p>
+          </article>
+
+          <article class="benefit">
+            <div class="benefit-icon">♢</div>
+            <h3>SEGURIDAD<br>Y CONFIANZA</h3>
+            <p>Tu tranquilidad es nuestra prioridad en cada viaje.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="final-cta">
+      <div class="cta-bg"></div>
+      <div class="cta-overlay"></div>
+      <div class="container cta-inner">
+        <div>
+          <h2>Cada viaje comienza<br>con una idea.</h2>
+          <p>Nosotros la hacemos realidad.</p>
+        </div>
+        <a class="gold-btn" href="https://wa.me/549112345678?text=Hola%20SHEAL%20Travel%20Agency%2C%20quiero%20cotizar%20un%20viaje." target="_blank" rel="noopener">
+          <span>◉</span> COTIZÁ TU VIAJE
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <h4>NAVEGACIÓN</h4>
+        <a href="#inicio">Inicio</a>
+        <a href="#destinos">Destinos</a>
+        <a href="#paquetes">Paquetes</a>
+        <a href="#nosotros">Sobre nosotros</a>
+      </div>
+
+      <div>
+        <h4>AYUDA</h4>
+        <a href="#">Preguntas frecuentes</a>
+        <a href="#">Términos y condiciones</a>
+        <a href="#">Política de privacidad</a>
+      </div>
+
+      <div>
+        <h4>CONTACTO</h4>
+        <a href="https://wa.me/549112345678" target="_blank" rel="noopener">◉ WhatsApp</a>
+        <a href="#" target="_blank" rel="noopener">◎ Instagram</a>
+        <span>⌖ Buenos Aires, Argentina</span>
+      </div>
+
+      <div class="sponsors">
+        <h4>Con el patrocinio de...</h4>
+        <div class="sponsor-logos">
+          <div class="sponsor jd">JD<br><small>STORE</small></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <span>© 2024 SHEAL Travel Agency. Todos los derechos reservados.</span>
+      <span>✈</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

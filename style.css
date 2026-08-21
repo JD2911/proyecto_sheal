@@ -1,0 +1,824 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --navy: #001b2e;
+  --navy-2: #00263d;
+  --gold: #c9a24a;
+  --gold-light: #dfbd70;
+  --cream: #f5f1e8;
+  --white: #ffffff;
+  --text: #1a2630;
+  --muted: #68717a;
+  --container: 1320px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  color: var(--text);
+  background: var(--cream);
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+.container {
+  width: min(100% - 80px, var(--container));
+  margin-inline: auto;
+}
+
+/* HEADER */
+.site-header {
+  height: 125px;
+  background: var(--navy);
+  color: var(--white);
+  position: relative;
+  z-index: 100;
+}
+
+.header-inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.brand {
+  width: 145px;
+  display: grid;
+  place-items: center;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.brand-mark {
+  color: var(--gold);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 60px;
+  line-height: .6;
+  transform: rotate(-12deg);
+  margin-bottom: 5px;
+}
+
+.brand-name {
+  color: var(--gold);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 32px;
+  letter-spacing: 2px;
+  line-height: 1;
+}
+
+.brand-subtitle {
+  color: var(--gold-light);
+  font-size: 8px;
+  letter-spacing: 2px;
+  margin-top: 5px;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(22px, 3vw, 48px);
+}
+
+.main-nav > a:not(.nav-cta) {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .3px;
+  transition: color .25s ease;
+}
+
+.main-nav > a:not(.nav-cta):hover {
+  color: var(--gold-light);
+}
+
+.nav-cta,
+.gold-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  background: var(--gold);
+  color: #fff;
+  border: 1px solid var(--gold);
+  padding: 15px 22px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .2px;
+  transition: transform .25s ease, background .25s ease, box-shadow .25s ease;
+}
+
+.nav-cta:hover,
+.gold-btn:hover {
+  transform: translateY(-2px);
+  background: #b68e37;
+  box-shadow: 0 10px 25px rgba(0,0,0,.18);
+}
+
+.menu-toggle {
+  display: none;
+  width: 45px;
+  height: 45px;
+  border: 1px solid rgba(255,255,255,.25);
+  background: transparent;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #fff;
+  margin: 5px auto;
+}
+
+/* HERO */
+.hero {
+  height: 560px;
+  position: relative;
+  color: #fff;
+  overflow: hidden;
+}
+
+.hero-slides,
+.hero-slide,
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-slide {
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transform: scale(1.04);
+  transition: opacity 1s ease, transform 7s ease;
+}
+
+.hero-slide.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.hero-overlay {
+  background: linear-gradient(90deg, rgba(0,27,46,.92) 0%, rgba(0,27,46,.65) 38%, rgba(0,27,46,.08) 78%),
+              linear-gradient(0deg, rgba(0,0,0,.22), transparent 40%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 20px;
+}
+
+.eyebrow {
+  color: var(--gold);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  margin-bottom: 15px;
+}
+
+.eyebrow.dark {
+  color: #b58d37;
+}
+
+.hero h1 {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+  font-size: clamp(55px, 5vw, 86px);
+  line-height: .85;
+  max-width: 650px;
+}
+
+.script-title {
+  color: var(--gold-light);
+  font-family: "Great Vibes", cursive;
+  font-size: clamp(48px, 4.3vw, 70px);
+  margin: 7px 0 12px;
+}
+
+.hero-copy {
+  font-size: 15px;
+  line-height: 1.7;
+  max-width: 520px;
+  color: rgba(255,255,255,.92);
+  margin-bottom: 25px;
+}
+
+.gold-btn {
+  width: fit-content;
+}
+
+.slider-dots {
+  position: absolute;
+  z-index: 5;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 0;
+  background: #fff;
+  opacity: .9;
+  cursor: pointer;
+}
+
+.dot.active {
+  background: var(--gold);
+}
+
+/* GENERIC SECTIONS */
+.section {
+  padding: 48px 0;
+}
+
+.destinations-section {
+  background: var(--cream);
+}
+
+.split-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 55px;
+  align-items: center;
+}
+
+.section-intro h2,
+.center-heading h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 500;
+  font-size: clamp(42px, 3.5vw, 59px);
+  line-height: .95;
+  margin-bottom: 20px;
+}
+
+.section-intro > p:not(.eyebrow) {
+  font-size: 13px;
+  line-height: 1.75;
+  color: #414b53;
+  margin-bottom: 25px;
+}
+
+.outline-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(180,145,74,.5);
+  color: #aa8235;
+  padding: 13px 16px;
+  border-radius: 5px;
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: all .25s ease;
+}
+
+.outline-btn:hover {
+  background: var(--gold);
+  color: #fff;
+}
+
+.cards-wrap {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  position: relative;
+}
+
+.travel-card {
+  height: 285px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 13px;
+  background: #123;
+  box-shadow: 0 7px 22px rgba(0,0,0,.12);
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+
+.travel-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 17px 35px rgba(0,0,0,.2);
+}
+
+.travel-card img {
+  height: 100%;
+  object-fit: cover;
+  transition: transform .7s ease;
+}
+
+.travel-card:hover img {
+  transform: scale(1.07);
+}
+
+.card-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(0,21,36,.97) 0%, rgba(0,21,36,.48) 37%, rgba(0,21,36,0) 70%);
+}
+
+.card-icon {
+  position: absolute;
+  left: 17px;
+  bottom: 57px;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  color: var(--gold-light);
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+}
+
+.card-content {
+  position: absolute;
+  left: 17px;
+  bottom: 15px;
+  color: #fff;
+}
+
+.card-content h3 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 21px;
+  font-weight: 600;
+  letter-spacing: .5px;
+}
+
+.card-content p {
+  font-size: 10px;
+  margin-top: 2px;
+}
+
+.carousel-arrow {
+  position: absolute;
+  right: -16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--gold);
+  color: #fff;
+  font-size: 26px;
+  cursor: pointer;
+  z-index: 5;
+}
+
+/* PACKAGES */
+.packages-section {
+  background: var(--navy);
+  color: #fff;
+}
+
+.section-intro.light > p:not(.eyebrow) {
+  color: rgba(255,255,255,.75);
+}
+
+.packages-section .travel-card {
+  border: 1px solid rgba(255,255,255,.08);
+}
+
+.carousel-controls {
+  position: absolute;
+  right: 0;
+  top: -48px;
+  display: flex;
+  gap: 8px;
+}
+
+.carousel-controls button {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,.4);
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+}
+
+.carousel-controls button.active {
+  background: var(--gold);
+  border-color: var(--gold);
+}
+
+/* WHY */
+.why-section {
+  background: var(--cream);
+  padding: 50px 0 55px;
+}
+
+.center-heading {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.center-heading h2 {
+  font-size: clamp(38px, 3vw, 51px);
+}
+
+.benefits {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.benefit {
+  padding: 8px 30px;
+  text-align: center;
+  border-right: 1px solid rgba(0,27,46,.15);
+}
+
+.benefit:last-child {
+  border-right: 0;
+}
+
+.benefit-icon {
+  width: 50px;
+  height: 50px;
+  margin: 0 auto 15px;
+  display: grid;
+  place-items: center;
+  color: var(--gold);
+  font-size: 42px;
+  font-family: "Cormorant Garamond", serif;
+}
+
+.benefit h3 {
+  font-size: 13px;
+  line-height: 1.35;
+  margin-bottom: 10px;
+}
+
+.benefit p {
+  max-width: 220px;
+  margin: auto;
+  font-size: 10px;
+  line-height: 1.65;
+  color: #56616a;
+}
+
+/* CTA */
+.final-cta {
+  height: 140px;
+  position: relative;
+  color: #fff;
+  overflow: hidden;
+}
+
+.cta-bg,
+.cta-overlay {
+  position: absolute;
+  inset: 0;
+}
+
+.cta-bg {
+  background: url("https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=2200&q=80") center 52% / cover;
+}
+
+.cta-overlay {
+  background: rgba(0,27,46,.82);
+}
+
+.cta-inner {
+  height: 100%;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.cta-inner h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 37px;
+  line-height: .9;
+  font-weight: 500;
+}
+
+.cta-inner p {
+  color: var(--gold-light);
+  font-family: "Great Vibes", cursive;
+  font-size: 29px;
+  margin-top: 3px;
+}
+
+/* FOOTER */
+.footer {
+  background: #00182a;
+  color: rgba(255,255,255,.8);
+  padding: 28px 0 15px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1.5fr;
+  gap: 45px;
+}
+
+.footer h4 {
+  color: #fff;
+  font-size: 10px;
+  margin-bottom: 14px;
+  letter-spacing: .5px;
+}
+
+.footer-grid > div {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.footer a,
+.footer span {
+  font-size: 9px;
+  color: rgba(255,255,255,.7);
+}
+
+.footer a:hover {
+  color: var(--gold-light);
+}
+
+.sponsors {
+  border-left: 1px solid rgba(255,255,255,.18);
+  padding-left: 35px;
+}
+
+.sponsor-logos {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.sponsor {
+  color: #fff;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 22px;
+  letter-spacing: 1px;
+  text-align: center;
+  line-height: .9;
+}
+
+.sponsor small {
+  font-family: "Montserrat", sans-serif;
+  font-size: 7px;
+  letter-spacing: 2px;
+}
+
+.sponsor.jd {
+  font-size: 35px;
+  font-weight: 600;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,.1);
+  margin-top: 25px;
+  padding-top: 12px;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  font-size: 8px;
+  color: rgba(255,255,255,.45);
+}
+
+/* RESPONSIVE */
+@media (max-width: 1050px) {
+  .container {
+    width: min(100% - 45px, var(--container));
+  }
+
+  .main-nav {
+    gap: 18px;
+  }
+
+  .split-layout {
+    grid-template-columns: 220px 1fr;
+    gap: 30px;
+  }
+
+  .travel-card {
+    height: 260px;
+  }
+
+  .footer-grid {
+    gap: 25px;
+  }
+}
+
+@media (max-width: 820px) {
+  .site-header {
+    height: 90px;
+  }
+
+  .brand {
+    width: 120px;
+  }
+
+  .brand-mark {
+    font-size: 46px;
+  }
+
+  .brand-name {
+    font-size: 26px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .main-nav {
+    position: absolute;
+    top: 90px;
+    left: 0;
+    width: 100%;
+    padding: 22px;
+    background: var(--navy);
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    box-shadow: 0 15px 30px rgba(0,0,0,.25);
+  }
+
+  .main-nav.open {
+    display: flex;
+  }
+
+  .main-nav > a:not(.nav-cta) {
+    padding: 14px 8px;
+    border-bottom: 1px solid rgba(255,255,255,.08);
+  }
+
+  .nav-cta {
+    margin-top: 15px;
+  }
+
+  .hero {
+    height: 600px;
+  }
+
+  .hero-overlay {
+    background: linear-gradient(90deg, rgba(0,27,46,.9), rgba(0,27,46,.45));
+  }
+
+  .split-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .section-intro {
+    max-width: 520px;
+  }
+
+  .cards-wrap {
+    grid-template-columns: repeat(3, minmax(180px, 1fr));
+    overflow-x: auto;
+    padding-bottom: 8px;
+    scrollbar-width: thin;
+  }
+
+  .travel-card {
+    min-width: 190px;
+  }
+
+  .benefits {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px 0;
+  }
+
+  .benefit:nth-child(2) {
+    border-right: 0;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sponsors {
+    border-left: 0;
+    border-top: 1px solid rgba(255,255,255,.18);
+    padding: 25px 0 0;
+  }
+}
+
+@media (max-width: 560px) {
+  .container {
+    width: min(100% - 30px, var(--container));
+  }
+
+  .hero {
+    height: 590px;
+  }
+
+  .hero-content {
+    justify-content: center;
+  }
+
+  .hero h1 {
+    font-size: 54px;
+  }
+
+  .script-title {
+    font-size: 48px;
+  }
+
+  .hero-copy {
+    font-size: 13px;
+  }
+
+  .desktop-only {
+    display: none;
+  }
+
+  .section {
+    padding: 38px 0;
+  }
+
+  .section-intro h2 {
+    font-size: 46px;
+  }
+
+  .cards-wrap {
+    gap: 12px;
+  }
+
+  .travel-card {
+    height: 290px;
+  }
+
+  .carousel-arrow {
+    display: none;
+  }
+
+  .benefits {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .benefit {
+    padding: 5px 12px;
+  }
+
+  .benefit h3 {
+    font-size: 10px;
+  }
+
+  .benefit p {
+    font-size: 8px;
+  }
+
+  .final-cta {
+    height: auto;
+    padding: 30px 0;
+  }
+
+  .cta-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cta-inner h2 {
+    font-size: 32px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px 20px;
+  }
+
+  .sponsor-logos {
+    gap: 25px;
+  }
+}
