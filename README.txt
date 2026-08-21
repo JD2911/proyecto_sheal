@@ -1,3 +1,5 @@
+#PATROCINADO POR: JD STORE 
+
 # SHEAL Travel Agency
 
 Página web estática creada con HTML5, CSS3 y JavaScript vanilla.
@@ -23,10 +25,6 @@ Las fotografías están conectadas mediante URLs de imágenes públicas para que
 Cuando tengas las imágenes definitivas de SHEAL, puedes guardarlas dentro de `assets/` y reemplazar las URLs de imágenes en `index.html` y `style.css`.
 
 ## WhatsApp
-
-El número utilizado como ejemplo es:
-
-549112345678
 
 Reemplázalo por el número real de SHEAL Travel Agency en los enlaces de WhatsApp.
 
