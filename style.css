@@ -64,11 +64,17 @@ button {
 }
 
 .brand {
-  width: 145px;
-  display: grid;
-  place-items: center;
-  position: relative;
-  flex: 0 0 auto;
+  width: 160px;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.brand img {
+  width: 100%;
+  height: auto;
+  max-height: 80px;
+  object-fit: contain;
 }
 
 .brand-mark {
@@ -600,8 +606,16 @@ button {
 }
 
 .sponsor.jd {
-  font-size: 35px;
-  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sponsor.jd img {
+  width: 110px;
+  height: auto;
+  max-height: 60px;
+  object-fit: contain;
 }
 
 .footer-bottom {
@@ -732,6 +746,7 @@ button {
     border-top: 1px solid rgba(255,255,255,.18);
     padding: 25px 0 0;
   }
+  
 }
 
 @media (max-width: 560px) {
